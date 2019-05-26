@@ -1,5 +1,5 @@
 <apex:page standardController="Contact" title="Verify Customer">
     <apex:form>
-        <apex:inputField searchTerm />
+        <apex:inputField value="searchTerm" />
     </apex:form>
 </apex:page>
