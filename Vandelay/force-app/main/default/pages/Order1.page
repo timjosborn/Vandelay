@@ -1,0 +1,5 @@
+<apex:page standardController="Contact" title="Verify Customer">
+    <apex:form>
+        <apex:inputField searchTerm />
+    </apex:form>
+</apex:page>
