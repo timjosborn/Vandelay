@@ -2,6 +2,7 @@ public class OrderController {
     public ApexPages.StandardController CC {get; set;}
     public String newLast {get; set;}
     public String newFirst {get; set;}
+    //public Account newAcct {get; set;}
     public String newStreet {get; set;}
     public String newCity {get; set;}
     public String newState {get; set;}
@@ -64,6 +65,7 @@ public class OrderController {
         Contact nc = new Contact();
         nc.FirstName = newFirst;
         nc.LastName = newLast; 
+        //nc.AccountId = newAcct.Id;
         nc.MailingStreet = newStreet;
         nc.MailingCity = newCity; 
         nc.MailingState = newState;
@@ -90,7 +92,7 @@ public class OrderController {
     public list <Contact> con {get;set;}
     public String searchKey {get;set;}
     public void search(){
-        string searchquery = 'SELECT FirstName, LastName, Account.Name, MailingStreet, MailingCity, MailingState, MailingPostalCode, Email, Phone, id FROM Contact WHERE Name LIKE \'%'+searchKey+'%\' ';
+        string searchquery = 'SELECT FirstName, LastName, AccountId, Account.Name, MailingStreet, MailingCity, MailingState, MailingPostalCode, Email, Phone, id FROM Contact WHERE Name LIKE \'%'+searchKey+'%\' ';
         con= Database.query(searchquery);
         Wrap();
     } 

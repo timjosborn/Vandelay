@@ -41,6 +41,7 @@
               </apex:column>            
               <apex:column value="{!wc.wcn.FirstName}"/>
               <apex:column value="{!wc.wcn.LastName}"/>
+              <apex:column value="{!wc.wcn.Account.Name}"/>
               <apex:column value="{!wc.wcn.MailingStreet}"/>
               <apex:column value="{!wc.wcn.MailingCity}"/>
               <apex:column value="{!wc.wcn.MailingState}"/>

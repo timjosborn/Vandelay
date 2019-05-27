@@ -15,21 +15,21 @@
           </apex:pageBlockButtons>
           <apex:pageBlockSection title="Please enter your customers info. All fields are required.">
           <H1>First Name</H1> 
-          <apex:inputText value="{!newFirst}"  />
+          <apex:inputText value="{!newFirst}" required="true"/>
           <H1>Last Name</H1> 
-          <apex:inputText value="{!newLast}"  />
+          <apex:inputText value="{!newLast}" required="true" />
           <H1>Street Address</H1> 
-          <apex:inputText value="{!newStreet}"  />
+          <apex:inputText value="{!newStreet}" required="true"/>
           <H1>City</H1> 
-          <apex:inputText value="{!newCity}"  />
+          <apex:inputText value="{!newCity}"  required="true"/>
           <H1>State</H1> 
-          <apex:inputText value="{!newState}"  />
+          <apex:inputText value="{!newState}"  required="true"/>
           <H1>Zip</H1> 
-          <apex:inputText value="{!newZip}"  />
+          <apex:inputText value="{!newZip}"  required="true"/>
           <H1>Email</H1> 
-          <apex:inputText value="{!newEmail}"  />
+          <apex:inputText value="{!newEmail}"  required="true"/>
           <H1>Phone</H1> 
-          <apex:inputText value="{!newPhone}"  />
+          <apex:inputText value="{!newPhone}"  required="true"/>
         </apex:pageBlockSection>
         </apex:pageBlock>
     </apex:form>
