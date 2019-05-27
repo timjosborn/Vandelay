@@ -1,0 +1,42 @@
+<apex:page controller="OrderController">
+  <apex:form >
+    <apex:pageBlock >
+      <apex:pageBlockButtons location="top" >
+        <apex:commandButton action="{!step1}" 
+                            value="Back" 
+                            id="next1"/>
+        <apex:commandButton action="{!saveAndNew}" 
+                            value="Save Changes & Proceed to Order"/>
+        </apex:pageBlockButtons>
+      <apex:pageBlockTable value="{!selectedContacts}" var="sc" id="theBlock">
+        <apex:column headerValue="First Name">
+          <apex:outputField value="{!sc.FirstName}"/>
+        </apex:column>
+        <apex:column headerValue="LastName">
+          <apex:inputField value="{!sc.LastName}"/>
+        </apex:column>
+        <apex:column headerValue="Account">
+          <apex:inputField value="{!sc.Account.Name}"/>
+        </apex:column>
+        <apex:column headerValue="Street">
+          <apex:inputField value="{!sc.MailingStreet}"/>
+        </apex:column>
+        <apex:column headerValue="City ">
+          <apex:inputField value="{!sc.MailingCity}"/>
+        </apex:column>
+        <apex:column headerValue="State ">
+          <apex:inputField value="{!sc.MailingState}"/>
+        </apex:column>
+        <apex:column headerValue="Zip Code ">
+          <apex:inputField value="{!sc.MailingPostalCode}"/>
+        </apex:column>
+        <apex:column headerValue="Email ">
+          <apex:inputField value="{!sc.Email}"/>          
+        </apex:column>
+        <apex:column headerValue="Phone ">
+          <apex:inputField value="{!sc.Phone}"/>
+        </apex:column>
+      </apex:pageBlockTable> 
+    </apex:pageBlock>
+  </apex:form>
+</apex:page>

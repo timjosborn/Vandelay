@@ -1,0 +1,55 @@
+<apex:page controller="OrderController">
+  <script>
+    function confirmCancel() {
+        var isCancel = confirm("Are you sure you wish to cancel?");
+        if (isCancel) return true;
+       return false;
+    }  
+  </script>   
+  <apex:form id="myForm">
+    <apex:pageBlock title="Search for Customer">
+      <div align="Center">
+        <apex:inputText value="{!searchKey}" label="Input"/>
+        <apex:commandButton value="Search" action="{!search}"/>
+      </div> 
+    </apex:pageBlock>
+    <apex:pageBlock title="Select One Customer and click 'Verify'" >  
+        
+      <apex:pageBlockButtons location="bottom" >
+        <apex:commandButton action="{!step2}" 
+                            value="Verify" 
+                            id="next"/>
+        <apex:commandButton action="{!create}" 
+                            value="Create New" 
+                            id="create"/>                    
+        <apex:commandButton action="{!cancel}" value="Cancel" 
+                            onclick="return confirmCancel()" 
+                            immediate="true" 
+                            id="cancel"/> 
+        </apex:pageBlockButtons>
+        
+        <apex:pageMessages id="myMsg"/>
+          
+        <apex:outputPanel id="action1"> 
+          <apex:pageBlockSection columns="1" id="pbs">
+            <apex:pageBlockTable value="{!wrapContactList}" var="wc" id="pt" styleClass="pTable">            
+              <apex:column >
+                <apex:facet name="header">
+                  <apex:outputLabel >Select</apex:outputLabel>
+                </apex:facet>
+              <apex:inputCheckbox value="{!wc.isSelected}" id="chkbox"/>
+              </apex:column>            
+              <apex:column value="{!wc.wcn.FirstName}"/>
+              <apex:column value="{!wc.wcn.LastName}"/>
+              <apex:column value="{!wc.wcn.MailingStreet}"/>
+              <apex:column value="{!wc.wcn.MailingCity}"/>
+              <apex:column value="{!wc.wcn.MailingState}"/>
+              <apex:column value="{!wc.wcn.MailingPostalCode}"/>
+              <apex:column value="{!wc.wcn.Email}"/>
+              <apex:column value="{!wc.wcn.Phone}"/>
+            </apex:pageBlockTable>  
+          </apex:pageBlockSection>
+        </apex:outputPanel>
+      </apex:pageBlock>
+    </apex:form> 
+</apex:page>
