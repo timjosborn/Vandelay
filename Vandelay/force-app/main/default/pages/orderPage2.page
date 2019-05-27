@@ -2,39 +2,40 @@
   <apex:form >
     <apex:pageBlock >
       <apex:pageBlockButtons location="top" >
-        <apex:commandButton action="{!step1}" 
+        <apex:commandButton action="{!cancel}" 
                             value="Back" 
-                            id="next1"/>
+                            immediate="true"
+                            id="startover"/>
         <apex:commandButton action="{!saveAndNew}" 
                             value="Save Changes & Proceed to Order"/>
         </apex:pageBlockButtons>
       <apex:pageBlockTable value="{!selectedContacts}" var="sc" id="theBlock">
         <apex:column headerValue="First Name">
-          <apex:outputField value="{!sc.FirstName}"/>
+          <apex:inputField value="{!sc.FirstName}" required="true" />
         </apex:column>
         <apex:column headerValue="LastName">
-          <apex:inputField value="{!sc.LastName}"/>
+          <apex:inputField value="{!sc.LastName}" required="true" />
         </apex:column>
         <apex:column headerValue="Account">
-          <apex:inputField value="{!sc.Account.Name}"/>
+          <apex:inputField value="{!sc.Account.Name}" required="true" />
         </apex:column>
         <apex:column headerValue="Street">
-          <apex:inputField value="{!sc.MailingStreet}"/>
+          <apex:inputField value="{!sc.MailingStreet}" required="true" />
         </apex:column>
         <apex:column headerValue="City ">
-          <apex:inputField value="{!sc.MailingCity}"/>
+          <apex:inputField value="{!sc.MailingCity}" required="true" />
         </apex:column>
         <apex:column headerValue="State ">
-          <apex:inputField value="{!sc.MailingState}"/>
+          <apex:inputField value="{!sc.MailingState}" required="true" />
         </apex:column>
         <apex:column headerValue="Zip Code ">
-          <apex:inputField value="{!sc.MailingPostalCode}"/>
+          <apex:inputField value="{!sc.MailingPostalCode}" required="true" />
         </apex:column>
         <apex:column headerValue="Email ">
-          <apex:inputField value="{!sc.Email}"/>          
+          <apex:inputField value="{!sc.Email}" required="true" />          
         </apex:column>
         <apex:column headerValue="Phone ">
-          <apex:inputField value="{!sc.Phone}"/>
+          <apex:inputField value="{!sc.Phone}" required="true" />
         </apex:column>
       </apex:pageBlockTable> 
     </apex:pageBlock>

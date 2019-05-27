@@ -13,8 +13,24 @@
                                 immediate="true" 
                                 id="cancel"/>
           </apex:pageBlockButtons>
+          <apex:pageBlockSection title="Please enter your customers info. All fields are required.">
+          <H1>First Name</H1> 
           <apex:inputText value="{!newFirst}"  />
+          <H1>Last Name</H1> 
           <apex:inputText value="{!newLast}"  />
+          <H1>Street Address</H1> 
+          <apex:inputText value="{!newStreet}"  />
+          <H1>City</H1> 
+          <apex:inputText value="{!newCity}"  />
+          <H1>State</H1> 
+          <apex:inputText value="{!newState}"  />
+          <H1>Zip</H1> 
+          <apex:inputText value="{!newZip}"  />
+          <H1>Email</H1> 
+          <apex:inputText value="{!newEmail}"  />
+          <H1>Phone</H1> 
+          <apex:inputText value="{!newPhone}"  />
+        </apex:pageBlockSection>
         </apex:pageBlock>
     </apex:form>
 </apex:page>
