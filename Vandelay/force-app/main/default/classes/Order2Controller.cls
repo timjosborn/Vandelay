@@ -15,13 +15,14 @@ public class Order2Controller {
     public Order2Controller(ApexPages.StandardController stdController) {
         ready = false;
         if (Contact.Academic_User__c = true) {
-            
+            Row1.Product2Id = [SELECT Id, Name, Description 
+                                FROM Product2Id
+                                WHERE ProductCode = 'B' ]
            
         }
     }
 
-    public PageReference cancel() {
-        
+    public PageReference cancel() {        
         return Page.order; 
     } 
 

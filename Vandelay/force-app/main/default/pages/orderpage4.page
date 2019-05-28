@@ -6,7 +6,8 @@
         <apex:commandButton action="{!cancel}" value="Cancel" />        
       </apex:pageBlockSection>
       <apex:pageBlockSection rendered="{!ready}" >
-        <h1>{!Opp.Name}</h1> 
+        
+        
       </apex:pageBlockSection>        
     </apex:pageBlock>
   </apex:form>
