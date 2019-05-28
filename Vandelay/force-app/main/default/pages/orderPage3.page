@@ -1,10 +1,7 @@
 <apex:page controller="OrderController">
     <apex:form >
         <apex:pageBlock >
-          <apex:pageBlockButtons location="bottom" >
-            <apex:commandButton action="{!step1}" 
-                                value="Back" 
-                                id="next1"/>
+          <apex:pageBlockButtons location="bottom" >            
             <apex:commandButton action="{!saveCon}" 
                                 value="Save & Place Order"/>
             <apex:commandButton action="{!cancel}" 

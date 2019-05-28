@@ -58,7 +58,10 @@ public class OrderController {
 
     public Pagereference saveAndNew() {  
         upsert selectedContacts;
-        return Page.orderPage4;        
+        Id conId = selectedContacts[0].Id;
+        Pagereference p4ref = Page.orderPage4;
+        p4ref.getParameters().put('ConId', conId); 
+        return p4ref;        
         }
 
     public PageReference saveCon() { 

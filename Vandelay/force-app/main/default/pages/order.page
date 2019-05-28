@@ -11,17 +11,15 @@
       <div align="Center">
         <apex:inputText value="{!searchKey}" label="Input"/>
         <apex:commandButton value="Search" action="{!search}"/>
+        <apex:commandButton value="Create New" action="{!create}"/> 
       </div> 
     </apex:pageBlock>
     <apex:pageBlock title="Select One Customer and click 'Verify'" >  
         
-      <apex:pageBlockButtons location="bottom" >
+      <apex:pageBlockButtons location="top" >
         <apex:commandButton action="{!step2}" 
                             value="Verify" 
-                            id="next"/>
-        <apex:commandButton action="{!create}" 
-                            value="Create New" 
-                            id="create"/>                    
+                            id="next"/>                   
         <apex:commandButton action="{!cancel}" value="Cancel" 
                             onclick="return confirmCancel()" 
                             immediate="true" 
