@@ -1,14 +1,20 @@
 <apex:page standardController="OpportunityLineItem" extensions="Order2Controller">
   <apex:form >
     <apex:pageBlock >
-      <apex:pageBlockSection title="Placing order for: {!Contact.Name}" >          
+      <apex:pageBlockSection title="Placing order for: {!Contact.Name}" >
+          <apex:outputField value="{!Contact.Academic_User__c}" />
+
         <apex:commandButton action="{!start}" value="Start" />
-        <apex:commandButton action="{!cancel}" value="Cancel" />        
+        <apex:commandButton action="{!cancel}" value="Cancel" />
       </apex:pageBlockSection>
-      <apex:pageBlockSection rendered="{!ready}" >
-        
-        
-      </apex:pageBlockSection>        
+    <apex:pageBlockSection rendered="{!ready}" >      
+      <h1>{!r1prod.Name} - </h1>
+      <h1> - {!r1prod.Description} </h1>
+    </apex:pageBlockSection>
+    <apex:pageBlockSection rendered="{!ready}" >      
+      <h1>{!r2prod.Name} - </h1>
+      <h1> - {!r2prod.Description} </h1>
+    </apex:pageBlockSection>
     </apex:pageBlock>
   </apex:form>
 </apex:page>

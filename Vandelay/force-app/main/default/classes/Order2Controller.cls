@@ -1,6 +1,8 @@
 public class Order2Controller {
     public OpportunityLineItem Row1 = new OpportunityLineItem();
     public OpportunityLineItem Row2 = new OpportunityLineItem();
+    public Product2 r1prod {get; set;}        
+    public Product2 r2prod {get; set;}    
     public Opportunity Opp {get; set;}
     public Boolean ready {get; set;}
     public Contact Contact { 
@@ -14,12 +16,24 @@ public class Order2Controller {
 
     public Order2Controller(ApexPages.StandardController stdController) {
         ready = false;
-        if (Contact.Academic_User__c = true) {
-            Row1.Product2Id = [SELECT Id, Name, Description 
-                                FROM Product2Id
-                                WHERE ProductCode = 'B' ]
-           
+        
+        if (Contact.Academic_User__c == true) {
+            r1prod = [SELECT Id, Name, Description 
+                        FROM Product2
+                        WHERE ProductCode = 'B'
+                        LIMIT 1];           
+        } else {
+            r1prod = [SELECT Id, Name, Description
+                        FROM Product2
+                        WHERE ProductCode = 'A'
+                        LIMIT 1];
         }
+        r2prod = [SELECT Id, Name, Description 
+                    FROM Product2
+                    WHERE ProductCode = 'C'
+                    LIMIT 1];
+        Row1.Product2Id = r1prod.Id;
+        Row2.Product2Id = r2prod.Id;
     }
 
     public PageReference cancel() {        
